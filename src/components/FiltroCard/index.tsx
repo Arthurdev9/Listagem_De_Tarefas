@@ -32,16 +32,11 @@ const FiltroCard = ({ legenda, criterio, valor }: Props) => {
   }
 
   const filtrar = () => {
-    dispatch(
-      alterarFiltro({
-        criterio,
-        valor
-      })
-    )
+    dispatch(alterarFiltro({ criterio, valor }))
   }
 
-  const ativo = verificaEstaAtivo()
   const contador = contarTarefas()
+  const ativo = verificaEstaAtivo()
 
   return (
     <S.Card ativo={ativo} onClick={filtrar}>
